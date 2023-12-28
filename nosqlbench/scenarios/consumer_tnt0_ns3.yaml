@@ -1,0 +1,14 @@
+description: consumer avro schema tnt0/ns3
+bindings:
+  topic: Mod(200); ToString(); Prefix("tp")
+params:
+  topic_uri: persistent://tnt0/ns3/{topic}
+  async_api: 'true'
+blocks:
+  msg-proc-consume-avro:
+    ops:
+      op1:
+        MessageConsume: "persistent://tnt0/ns3/{topic}"
+        consumerName: ''
+        subscriptionName: "perfsub"
+        subscriptionType: 'Shared'
